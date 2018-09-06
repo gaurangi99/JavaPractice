@@ -6,7 +6,6 @@ public class EID_cc {
 	public static void main(String[] args) {
 		int t, n, i;
 		int[] v, d;
-		Scanner in = new Scanner();
 		t = in.nextInt();
 		while (t >= 0) {
 			n = in.nextInt();
@@ -21,14 +20,19 @@ public class EID_cc {
 			System.out.printf("\n%d", d[0]);
 			t--;
 		}
-		
-	public void sort(int[] v, int n) {
-		int l,m;
-		
-		
 	}
-		// TODO Auto-generated method stub
 
+	public void sort(int[] a, int b) {
+		int l, m, tmp;
+		for (l = 1; l <= b; l++) {
+			for (m = 0; m < l; m++) {
+				if (a[m] > a[l]) {
+					tmp = a[l];
+					a[l] = a[m];
+					a[m] = tmp;
+				}
+			}
+		}
 	}
 
 }
