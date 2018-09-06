@@ -2,7 +2,7 @@ import java.util.Scanner;
 import static java.lang.Math.abs;
 
 public class EID_cc {
-	int[] a;
+	int[] a = new int[10];
 	int b;
 
 	public static void main(String[] args) {
