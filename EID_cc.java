@@ -6,7 +6,8 @@ public class EID_cc {
 	int b;
 
 	public static void main(String[] args) {
-		int t, n, i;
+		int t, i;
+		long n;
 		int[] v = new int[10];
 		int[] d = new int[10];
 		System.out.println();
@@ -20,7 +21,7 @@ public class EID_cc {
 				}
 				s.sort(v, n);
 				for (i = 0; i < n - 1; i++) {
-					d[i] = abs(v[i] - v[i + 1]);
+					d[i] = abs(v[i + 1] - v[i]);
 				}
 				s.sort(d, n - 1);
 				System.out.printf("%d\n", d[0]);
@@ -29,7 +30,7 @@ public class EID_cc {
 		}
 	}
 
-	public void sort(int[] a, int b) {
+	public void sort(int[] a, long b) {
 		int l, m, tmp;
 		for (l = 1; l < b; l++) {
 			for (m = 0; m < l; m++) {
