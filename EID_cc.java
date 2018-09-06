@@ -9,10 +9,11 @@ public class EID_cc {
 		int t, n, i;
 		int[] v = new int[10];
 		int[] d = new int[10];
+		System.out.println();
 		try (Scanner in = new Scanner(System.in);) {
 			EID_cc s = new EID_cc();
 			t = in.nextInt();
-			while (t >= 0) {
+			while (t > 0) {
 				n = in.nextInt();
 				for (i = 0; i < n; i++) {
 					v[i] = in.nextInt();
@@ -20,6 +21,9 @@ public class EID_cc {
 				s.sort(v, n);
 				for (i = 0; i < n - 1; i++) {
 					d[i] = abs(v[i] - v[i + 1]);
+				}
+				for (i = 0; i < n - 1; i++) {
+					System.out.printf("\n%d",d[i]);
 				}
 				s.sort(d, n - 1);
 				System.out.printf("\n%d", d[0]);
