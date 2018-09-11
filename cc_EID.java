@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import static java.lang.Math.abs;
 
-public class EID_cc {
+public class cc_EID {
 	int[] a = new int[10];
 	int b;
 
@@ -12,7 +12,7 @@ public class EID_cc {
 		int[] d = new int[10];
 		System.out.println();
 		try (Scanner in = new Scanner(System.in);) {
-			EID_cc s = new EID_cc();
+			cc_EID s = new cc_EID();
 			t = in.nextInt();
 			while (t > 0) {
 				n = in.nextInt();
