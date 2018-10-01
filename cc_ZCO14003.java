@@ -4,23 +4,31 @@ public class cc_ZCO14003 {
 
 	public static void main(String[] args) {
 		long n, max;
-		int i;
+		int i, t;
 		long[] p = new long[10];
 		cc_ZCO14003 o = new cc_ZCO14003();
 		try (Scanner in = new Scanner(System.in);) {
 			System.out.println();
-			n = in.nextLong();
-			for (i = 1; i <= n; i++) {
-				p[i] = in.nextLong();
-			}
-			o.sort(p, n);
-			max = p[1];
-			for (i = 2; i <= n; i++) {
-				if (max < (i * p[i])) {
-					max = p[i] * i;
+			t = in.nextInt();
+			while (t > 0) {
+				n = in.nextLong();
+				if (n == 0) {
+					break;
+				} else {
+					for (i = 1; i <= n; i++) {
+						p[i] = in.nextLong();
+					}
+					o.sort(p, n);
+					max = p[1];
+					for (i = 2; i <= n; i++) {
+						if (max < (i * p[i])) {
+							max = p[i] * i;
+						}
+					}
+					System.out.println(max);
 				}
+				t--;
 			}
-			System.out.println(max);
 			// TODO Auto-generated method stub
 		}
 	}
