@@ -9,14 +9,14 @@ public class cc_BITOBYT {
 			while (t > 0) {
 				int n = in.nextInt();
 				double b = 0, nb = 0, by = 0;
-				int q = n / 16;
-				int r = n % 16;
+				int q = n / 26;
+				int r = n % 26;
 				if (n != 0) {
 					if (r == 1 || r == 2) {
 						b = Math.pow(2, q);
-					} else if (r >= 3 && r <= 8) {
+					} else if (r >= 3 && r <= 10) {
 						nb = Math.pow(2, q);
-					} else if (r >= 9 && r <= 15) {
+					} else if (r > 10 && r <= 25) {
 						by = Math.pow(2, q);
 					} else if (r == 0 && q > 0) {
 						by = Math.pow(2, q - 1);
