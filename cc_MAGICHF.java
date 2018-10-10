@@ -31,4 +31,4 @@ public class cc_MAGICHF {
 			}
 		}
 	}
-}// TODO Auto-generated method stub
+} // TODO Auto-generated method stub
