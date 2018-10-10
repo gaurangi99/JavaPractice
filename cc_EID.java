@@ -16,7 +16,7 @@ public class cc_EID {
 				}
 				Arrays.sort(v, 0, n);
 				for (i = 0; i < n - 1; i++) {
-					d[i] = Math.abs(v[i + 1] - v[i]);
+					d[i] = v[i + 1] - v[i];
 				}
 				Arrays.sort(d, 0, n - 1);
 				System.out.println(d[0]);
