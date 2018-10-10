@@ -25,8 +25,3 @@ public class cc_EID {
 		}
 	}
 }
-/*
- * public void sort(int[] a, int b) { int j, k, key; for (j = 1; j < b; j++) {
- * key = a[j]; k = j - 1; while (k > -1 && key < a[k]) { a[k + 1] = a[k]; k--; }
- * a[k + 1] = key; } // TODO Auto-generated method stub }
- */
