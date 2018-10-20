@@ -11,12 +11,12 @@ public class cc_KFIB {
 			if (n <= k) {
 				System.out.println(1);
 			} else if (n > k) {
-				for (int i = 1; i <= k; i++) {
+				for (int i = 0; i <= k; i++) {
 					s[i] = 1;
 				}
 				s[k + 1] = k;
 				for (int i = k + 2; i <= n; i++) {
-					s[i] = 2 * s[i - 1] - s[i - k - 1];
+					s[i] = (2 * s[i - 1] - s[i - k - 1]) % 1000000007;
 				}
 				System.out.println(s[n]);
 			}
