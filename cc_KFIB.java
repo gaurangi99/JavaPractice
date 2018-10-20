@@ -13,14 +13,17 @@ public class cc_KFIB {
 	}
 
 	public static int t(int n, int k) {
-		int s = 0;
-		if (n <= k) {
-			s = 1;
-		} else {
-			for (int i = 1; i < k + 1; i++) {
-				s += t(n - i, k);
+		int[] s = new int[n];
+		int i = 0;
+		for (i = 1; i <= n; i++) {
+			if (i <= k) {
+				s[i] = 1;
+			}
+			s[k + 1] = k;
+			if (i > k + 1) {
+				s[i] = 2 * s[i - 1] - s[i - k - 1];
 			}
 		}
-		return s;
+		return s[n];
 	}
 }
