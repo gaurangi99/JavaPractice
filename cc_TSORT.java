@@ -1,13 +1,12 @@
 import java.util.*;
 
 public class cc_TSORT {
-	
+
 	public static void main(String[] args) {
-		int t;
-		int a[] = new int[10];
 		try (Scanner in = new Scanner(System.in);) {
 			System.out.println();
-			t = in.nextInt();
+			int t = in.nextInt();
+			int a[] = new int[t];
 			for (int k = 0; k < t; k++)
 				a[k] = in.nextInt();
 			insertionSort(t, a);
@@ -30,7 +29,7 @@ public class cc_TSORT {
 
 	public static void sorted_Arr(int t, int[] a) {
 		for (int i = 0; i < t; i++) {
-			System.out.printf("%d\n", a[i]);
+			System.out.println(a[i]);
 		}
 	}
 }
