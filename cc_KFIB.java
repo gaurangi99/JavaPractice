@@ -10,7 +10,7 @@ public class cc_KFIB {
 			int[] s = new int[n + 1];
 			if (n <= k) {
 				System.out.println(1);
-			} else {
+			} else if (n > k) {
 				for (int i = 1; i <= k; i++) {
 					s[i] = 1;
 				}
