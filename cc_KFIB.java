@@ -7,7 +7,7 @@ public class cc_KFIB {
 			System.out.println();
 			int n = in.nextInt();
 			int k = in.nextInt();
-			int[] s = new int[n + 1];
+			long[] s = new long[n + 1];
 			if (n <= k) {
 				System.out.println(1);
 			} else if (n > k) {
