@@ -9,10 +9,6 @@ public class Sort_Merge {
 		System.out.println("Enter size:");
 		try (Scanner in = new Scanner(System.in);) {
 			n = in.nextInt();
-			/*
-			 * System.out.println("\nEnter starting index:"); p = in.nextInt();
-			 * System.out.println("\nEnter ending index:"); r = in.nextInt();
-			 */
 			System.out.println("Enter " + n + " integers:");
 			for (int i = 0; i < n; i++)
 				a[i] = in.nextInt();
