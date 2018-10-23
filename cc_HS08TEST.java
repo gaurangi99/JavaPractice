@@ -5,17 +5,15 @@ public class cc_HS08TEST {
 	public static void main(String[] args) {
 		try (Scanner in = new Scanner(System.in);) {
 			System.out.println();
-			int x = in.nextInt();
-			double bc = 0.50;
-			System.out.println(bc);
+			double w = in.nextDouble();
+			// double bc = 0.50;
 			double ab = in.nextDouble();
-			if (x % 5 == 0) {
-				ab = ab - x - bc;
-				System.out.printf("%.2d", ab);
-			} else {
-				System.out.printf("%.2d", ab);
+			if (w + 0.50 <= ab) {
+				if (w % 5 == 0) {
+					ab = ab - w - 0.50;
+				}
 			}
-			// TODO Auto-generated method stub
+			System.out.printf("%.2f", ab);
 		}
-	}
+	}// TODO Auto-generated method stub
 }
