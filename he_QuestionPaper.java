@@ -4,12 +4,12 @@ public class he_QuestionPaper {
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-		int t = in.nextInt();
+		long t = in.nextLong();
 		while (t > 0) {
-			int n = in.nextInt();
+			long n = in.nextLong();
 			int a = in.nextInt();
 			int b = in.nextInt();
-			int r;
+			long r;
 			if (a == b) {
 				r = (n * n) + 1;
 			} else {
