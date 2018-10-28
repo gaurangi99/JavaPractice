@@ -17,7 +17,7 @@ public class he_ReversingElements {
 				tmp = a[l];
 				a[l] = a[r];
 				a[r] = tmp;
-
+				
 			}
 
 		}
