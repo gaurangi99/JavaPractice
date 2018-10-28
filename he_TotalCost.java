@@ -10,7 +10,8 @@ public class he_TotalCost {
 		int h = in.nextInt();
 		int x = in.nextInt();
 		int tc = 0;
-
+		tc = (s - t) * p + (x - s + t) * h;
+		System.out.println(tc);
 		// TODO Auto-generated method stub
 	}
 }
