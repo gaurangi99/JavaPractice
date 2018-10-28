@@ -11,8 +11,15 @@ public class he_TotalCost {
 		int x = in.nextInt();
 		int tc = 0;
 		if (x <= s) {
-			if (s > t) {
-				tc = (s - t) * p + (x - s + t) * h;
+			while (s > t) {
+				tc += p;
+				s--;
+				x--;
+			}
+			while (s > 0 && s <= t && x > 0) {
+				tc += h;
+				s--;
+				x--;
 			}
 		}
 		System.out.println(tc);
