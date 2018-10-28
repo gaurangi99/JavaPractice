@@ -12,7 +12,7 @@ public class he_QuestionPaper {
 				int b = in.nextInt();
 				long r = 0;
 				if (a == b) {
-					System.out.println((n * 2) + 1);
+					r = (n * 2) + 1;
 				} else {
 					r = (n + 2) * (n + 1) / 2;
 				}
