@@ -13,8 +13,6 @@ public class he_TotalCost {
 		if (x <= s) {
 			if (s > t) {
 				tc = (s - t) * p + (x - s + t) * h;
-			} else {
-				tc = x * h;
 			}
 		}
 		System.out.println(tc);
