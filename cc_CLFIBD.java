@@ -13,7 +13,7 @@ public class cc_CLFIBD {
 					System.out.println("Dynamic");
 				} else {
 					for (i = 0; i < s.length; i++) {
-
+						
 					}
 				}
 				t--;
