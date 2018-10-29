@@ -17,9 +17,12 @@ public class he_ReversingElements {
 				tmp = a[l];
 				a[l] = a[r];
 				a[r] = tmp;
-				
+				int maxS=0,sum=0;
+				for(int i=1;i<=n;i++) {
+					maxS+=a[i];
+					
+				}
 			}
-
 		}
 		// TODO Auto-generated method stub
 	}
