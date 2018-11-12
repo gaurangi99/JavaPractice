@@ -10,11 +10,11 @@ public class cc_CHHAPPY {
 				int i, j, flag = 0;
 				int n = in.nextInt();
 				int[] a = new int[n];
-				for (i = 0; i < n; i++) {
+				for (i = 1; i <= n; i++) {
 					a[i] = in.nextInt();
 				}
-				for (i = 0; i < n - 1; i++) {
-					for (j = i + 1; j < n; j++) {
+				for (i = 1; i <= n - 1; i++) {
+					for (j = i + 1; j <= n; j++) {
 						if (a[i] != a[j]) {
 							if (a[a[i]] == a[a[j]]) {
 								flag = 1;
