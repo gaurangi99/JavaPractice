@@ -18,7 +18,7 @@ public class cc_ZCO14003 {
 					for (i = 1; i <= n; i++) {
 						p[i] = in.nextLong();
 					}
-					sort(p, n);
+					Arrays.sort(p,Collections.reverseOrder());
 					max = p[1];
 					for (i = 2; i <= n; i++) {
 						if (max < (i * p[i])) {
@@ -33,7 +33,7 @@ public class cc_ZCO14003 {
 		}
 	}
 
-	public static void sort(long[] p, long n) {
+	/*public static void sort(long[] p, long n) {
 		int i, j;
 		long key;
 		for (i = 2; i <= n; i++) {
@@ -45,5 +45,5 @@ public class cc_ZCO14003 {
 			}
 			p[j + 1] = key;
 		}
-	}
+	}*/
 }
