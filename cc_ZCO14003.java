@@ -18,7 +18,8 @@ public class cc_ZCO14003 {
 					for (i = 1; i <= n; i++) {
 						p[i] = in.nextLong();
 					}
-					Arrays.sort(p,Collections.reverseOrder());
+					Arrays.sort(p);
+					
 					max = p[1];
 					for (i = 2; i <= n; i++) {
 						if (max < (i * p[i])) {
