@@ -5,7 +5,7 @@ public class cc_ZCO14001 {
 	public static void main(String[] args) {
 		int n, h, i;
 		int[] s = new int[10];
-		
+
 		try (Scanner in = new Scanner(System.in);) {
 			System.out.println();
 			n = in.nextInt();
@@ -15,7 +15,5 @@ public class cc_ZCO14001 {
 			}
 		}
 		// TODO Auto-generated method stub
-
 	}
-
 }
