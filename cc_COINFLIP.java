@@ -10,29 +10,29 @@ public class cc_COINFLIP {
 				int g = in.nextInt();
 				while (g > 0) {
 					int i = in.nextInt();
-					long n = in.nextLong();
+					int n = in.nextInt();
 					int q = in.nextInt();
 					if (n % 2 != 0) {
 						if (i == 1) {
 							if (q == 1) {
-								System.out.println(n / 2);
+								System.out.println((int) (n / 2));
 							} else {
-								System.out.println(n / 2 + 1);
+								System.out.println(((int) (n / 2)) + 1);
 							}
 						} else {
 							if (q == 1) {
-								System.out.println(n / 2 + 1);
+								System.out.println(((int) (n / 2)) + 1);
 							} else {
-								System.out.println(n / 2);
+								System.out.println((int) (n / 2));
 							}
 						}
 					} else {
-						System.out.println(n / 2);
+						System.out.println((int) (n / 2));
 					}
+					g--;
 				}
-				g--;
+				t--;
 			}
-			t--;
 		}
 	}
 	// TODO Auto-generated method stub
