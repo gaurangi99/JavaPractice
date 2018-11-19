@@ -12,8 +12,8 @@ public class cc_ARMBH1 {
 				int s = 0;
 				if (n % x == 0) {
 					while (n != 0) {
-						s += n;
 						n = n - x;
+						s += n;
 					}
 				} else {
 					int r = n % x;
