@@ -10,7 +10,7 @@ public class cc_ARMBH2 {
 				int m = in.nextInt();
 				int k = in.nextInt();
 				long[][] a = new long[n][m];
-				int i,j,l;
+				int i, j, l;
 				long max = 0, sh = 0, sv = 0;
 				for (i = 0; i < n; i++) {
 					for (j = 0; j < m; j++) {
@@ -28,11 +28,11 @@ public class cc_ARMBH2 {
 						}
 					}
 				}
-				for (i = 0; i < m; i++) {
-					for (j = 0; j <= n - k; j++) {
+				for (j = 0; j < m; j++) {
+					for (i = 0; i <= n - k; i++) {
 						sv = a[i][j];
 						for (l = 1; l < k; l++) {
-							sv += a[i][j + l];
+							sv += a[i + l][j];
 						}
 						if (max < sv) {
 							max = sv;
