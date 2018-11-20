@@ -19,7 +19,5 @@ public class cc_AVGMAT {
 			}
 		}
 		// TODO Auto-generated method stub
-
 	}
-
 }
