@@ -25,6 +25,3 @@ public class multiplyBasic {
 		return p;
 	}
 }
-// 70272019392
-
-// 6924893952
