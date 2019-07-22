@@ -16,20 +16,19 @@ public class HugeInteger {
 	}
 
 	public char[] parse(String s) {
-		int i;
+		int i, j;
 		if (s.length() == 40) {
 			for (i = 0; i < s.length(); i++) {
 				a[i] = s.charAt(i);
 			}
+		} else {
+			for (i = 0; i < 40 - s.length(); i++) {
+				a[i] = '0';
+			}
+			for (i = 40 - s.length(), j = 0; i < 40 && j < s.length(); i++, j++) {
+				a[i] = s.charAt(j);
+			}
 		}
-		// else {
-		// for (i = 0; i < 40 - s.length(); i++) {
-		// a[i] = 0;
-		// }
-		// for (i = 40 - s.length(), j = 0; i < 40 && j < s.length(); i++, j++) {
-		// a[i] = s.charAt(j);
-		// }
-		// }
 		// charToInt();
 		return a;
 	}
