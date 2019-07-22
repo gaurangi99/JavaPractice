@@ -160,39 +160,37 @@ public class HugeInteger {
 	public HugeInteger mul(HugeInteger h1, HugeInteger h2) {
 		HugeInteger g = new HugeInteger();
 		int i, j, ctr = 0, carry = 0, tmp = 0, k;
+		for (i = 0; i < this.a.length; i++) {
+			this.a[i] = '0';
+		}
 		int[] p = new int[40];
 		int[] q = new int[40];
 		int[] r = new int[40];
 		for (i = 0; i < h1.a.length; i++) {
-			p[i] = (int) a[i] - 48;
+			p[i] = (int) h1.a[i] - 48;
 		}
 		for (i = 0; i < h2.a.length; i++) {
-			q[i] = (int) a[i] - 48;
+			q[i] = (int) h2.a[i] - 48;
 		}
 		for (i = q.length - 1; i >= 0; i--) {
-			k = 0;
-			while (k >= 0) {
-				k = p.length - 1 - ctr;
-				for (j = p.length - 1; j >= 0; j--) {
-					tmp += (p[j] * q[i]) + carry;
-					if (tmp > 9) {
-						r[k] = tmp % 10;
-						carry = tmp / 10;
-					} else {
-						r[k] = tmp;
-						carry = 0;
-					}
-					tmp = 0;
-					k--;
+			for (j = p.length - 1, k = p.length - 1 - ctr; j >= 0 && k >= 0; j--, k--) {
+				tmp += (p[j] * q[i]) + carry;
+				if (tmp > 9) {
+					r[k] = tmp % 10;
+					carry = tmp / 10;
+				} else {
+					r[k] = tmp;
+					carry = 0;
 				}
-				for (int x = 0; x < r.length; x++) {
-					g.a[i] = (char) (r[i] + 48);
-					r[i] = 0;
-				}
-				add(this, g);
-				carry = 0;
-				ctr++;
+				tmp = 0;
 			}
+			for (int x = 0; x < r.length; x++) {
+				g.a[x] = (char) (r[x] + 48);
+				r[x] = 0;
+			}
+			add(this, g);
+			carry = 0;
+			ctr++;
 		}
 		return this;
 	}
