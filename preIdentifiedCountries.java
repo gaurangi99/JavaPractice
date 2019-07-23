@@ -18,5 +18,4 @@ public enum preIdentifiedCountries {
 	public String getCause() {
 		return cause;
 	}
-
 }
