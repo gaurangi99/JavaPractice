@@ -1,13 +1,23 @@
 public class Passenger {
-	String name, action;
+	String name, action, passNum;
 	String[] prevDstn = new String[3];
 	String[] food = new String[10];
-	char passNum;
 	int actualAgriPdt, claimAgriPdt, actualWpn, claimWpn, actualMoney, claimMoney;
 	Date passIss;
 	char extraMoneyCheck;
 
-	public Passenger(String name, char passNum, Date passIss, String[] food, String[] prevDstn, int claimMoney,
+	public Passenger() {
+		this.name = null;
+		this.passNum = null;
+		this.passIss = null;
+		this.claimAgriPdt = 0;
+		this.claimWpn = 0;
+		this.claimMoney = 0;
+		this.prevDstn = null;
+		this.food = null;
+	}
+
+	public Passenger(String name, String passNum, Date passIss, String[] food, String[] prevDstn, int claimMoney,
 			int claimAgriPdt, int claimWpn) {
 		this.name = name;
 		this.passNum = passNum;
@@ -27,11 +37,11 @@ public class Passenger {
 		this.name = name;
 	}
 
-	public char getpassNum() {
+	public String getpassNum() {
 		return passNum;
 	}
 
-	public void setpassNum(char num) {
+	public void setpassNum(String num) {
 		this.passNum = num;
 	}
 
