@@ -1,12 +1,13 @@
 public class Passenger {
 	String name, action;
-	String[] prevDestn = new String[3];
-	int passNum, actualAgriPdt, claimAgriPdt, actualWpn, claimWpn, actualMoney, claimMoney;
+	String[] prevDstn = new String[3];
+	char passNum;
+	int actualAgriPdt, claimAgriPdt, actualWpn, claimWpn, actualMoney, claimMoney;
 	Date passIss;
 	char extraMoneyCheck;
 
-	public Passenger(String name, int passNum, Date passIss, int claimAgriPdt, int claimWpn, int claimMoney,
-			String[] prevDestn) {
+	public Passenger(String name, char passNum, Date passIss, int claimAgriPdt, int claimWpn, int claimMoney,
+			String[] prevDstn) {
 		// if (claimAgriPdt > 5) {
 		//
 		// }
@@ -16,7 +17,7 @@ public class Passenger {
 		this.claimAgriPdt = claimAgriPdt;
 		this.claimWpn = claimWpn;
 		this.claimMoney = claimMoney;
-		this.prevDestn = prevDestn;
+		this.prevDstn = prevDstn;
 	}
 
 	public String getName() {
@@ -27,11 +28,11 @@ public class Passenger {
 		this.name = name;
 	}
 
-	public int getpassNum() {
+	public char getpassNum() {
 		return passNum;
 	}
 
-	public void setpassNum(int num) {
+	public void setpassNum(char num) {
 		this.passNum = num;
 	}
 
@@ -66,4 +67,38 @@ public class Passenger {
 	public void setclaimMoney(int money) {
 		this.claimMoney = money;
 	}
+
+	public String[] getprevDstn() {
+		return prevDstn;
+	}
+
+	public void setprevDstn(String[] prevDstn) {
+		this.prevDstn = prevDstn;
+	}
+
+	public int getactualAgriPdt() {
+		return actualAgriPdt;
+	}
+
+	public void setactualAgriPdt(int pdt) {
+		this.actualAgriPdt = pdt;
+	}
+
+	public int getactualWpn() {
+		return actualWpn;
+	}
+
+	public void setactualWpn(int wpn) {
+		this.actualWpn = wpn;
+	}
+
+	public int getactualMoney() {
+		return actualMoney;
+	}
+
+	public void setactualMoney(int money) {
+		this.actualMoney = money;
+	}
+	
+	
 }
