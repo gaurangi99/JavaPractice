@@ -100,7 +100,19 @@ public class Passenger {
 		this.actualMoney = money;
 	}
 
-	public String furtherCheck() {
+	public String action(int count) {
+		if (count == 0) {
+			return String.format("No further action to be taken place. Clean Record!!");
+		} else if (count == 1) {
+			return String.format("Full search of baggage.");
+		} else if (count == 2) {
+			return String.format("Full search of baggage, x-ray scan and personal search.");
+		} else {
+			return String.format("Not eligible");
+		}
+	}
+
+	public void furtherCheck() {
 		int count = 0;
 		for (int i = 0; i < prevDstn.length; i++) {
 			for (preIdentifiedCountries country : preIdentifiedCountries.values()) {
@@ -109,5 +121,6 @@ public class Passenger {
 				}
 			}
 		}
+		action(count);
 	}
 }
