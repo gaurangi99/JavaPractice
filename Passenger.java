@@ -99,6 +99,15 @@ public class Passenger {
 	public void setactualMoney(int money) {
 		this.actualMoney = money;
 	}
-	
-	
+
+	public String furtherCheck() {
+		int count = 0;
+		for (int i = 0; i < prevDstn.length; i++) {
+			for (preIdentifiedCountries country : preIdentifiedCountries.values()) {
+				if (prevDstn[i] == country.getName()) {
+					count++;
+				}
+			}
+		}
+	}
 }
