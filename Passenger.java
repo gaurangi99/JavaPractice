@@ -1,16 +1,14 @@
 public class Passenger {
 	String name, action;
 	String[] prevDstn = new String[3];
+	String[] food = new String[10];
 	char passNum;
 	int actualAgriPdt, claimAgriPdt, actualWpn, claimWpn, actualMoney, claimMoney;
 	Date passIss;
 	char extraMoneyCheck;
 
-	public Passenger(String name, char passNum, Date passIss, int claimAgriPdt, int claimWpn, int claimMoney,
-			String[] prevDstn) {
-		// if (claimAgriPdt > 5) {
-		//
-		// }
+	public Passenger(String name, char passNum, Date passIss, String[] food, String[] prevDstn, int claimMoney,
+			int claimAgriPdt, int claimWpn) {
 		this.name = name;
 		this.passNum = passNum;
 		this.passIss = passIss;
@@ -18,6 +16,7 @@ public class Passenger {
 		this.claimWpn = claimWpn;
 		this.claimMoney = claimMoney;
 		this.prevDstn = prevDstn;
+		this.food = food;
 	}
 
 	public String getName() {
@@ -44,6 +43,30 @@ public class Passenger {
 		this.passIss = date;
 	}
 
+	public String[] getfood() {
+		return food;
+	}
+
+	public void setfood(String[] food) {
+		this.food = food;
+	}
+
+	public String[] getprevDstn() {
+		return prevDstn;
+	}
+
+	public void setprevDstn(String[] prevDstn) {
+		this.prevDstn = prevDstn;
+	}
+
+	public int getclaimMoney() {
+		return claimMoney;
+	}
+
+	public void setclaimMoney(int money) {
+		this.claimMoney = money;
+	}
+
 	public int getclaimAgriPdt() {
 		return claimAgriPdt;
 	}
@@ -60,20 +83,12 @@ public class Passenger {
 		this.claimWpn = wpn;
 	}
 
-	public int getclaimMoney() {
-		return claimMoney;
+	public int getactualMoney() {
+		return actualMoney;
 	}
 
-	public void setclaimMoney(int money) {
-		this.claimMoney = money;
-	}
-
-	public String[] getprevDstn() {
-		return prevDstn;
-	}
-
-	public void setprevDstn(String[] prevDstn) {
-		this.prevDstn = prevDstn;
+	public void setactualMoney(int money) {
+		this.actualMoney = money;
 	}
 
 	public int getactualAgriPdt() {
@@ -92,23 +107,15 @@ public class Passenger {
 		this.actualWpn = wpn;
 	}
 
-	public int getactualMoney() {
-		return actualMoney;
-	}
-
-	public void setactualMoney(int money) {
-		this.actualMoney = money;
-	}
-
-	public String action(int count) {
-		if (count == 0) {
-			return String.format("No further action to be taken place. Clean Record!!");
-		} else if (count == 1) {
-			return String.format("Full search of baggage.");
-		} else if (count == 2) {
-			return String.format("Full search of baggage, x-ray scan and personal search.");
+	public void checkDiscrepancy() {
+		if (getclaimMoney() - getactualMoney() != 0) {
+			furtherCheck();
+		} else if (getclaimAgriPdt() - getactualAgriPdt() != 0) {
+			furtherCheck();
+		} else if (getclaimWpn() - getactualWpn() != 0) {
+			furtherCheck();
 		} else {
-			return String.format("Not eligible");
+			action(0);
 		}
 	}
 
@@ -122,5 +129,17 @@ public class Passenger {
 			}
 		}
 		action(count);
+	}
+
+	public String action(int count) {
+		if (count == 0) {
+			return String.format("No further action. Clean Record, eligible!!");
+		} else if (count == 1) {
+			return String.format("Full search of baggage.");
+		} else if (count == 2) {
+			return String.format("Full search of baggage, x-ray scan and personal search.");
+		} else {
+			return String.format("Not eligible");
+		}
 	}
 }
