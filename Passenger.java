@@ -1,10 +1,9 @@
 public class Passenger {
-	String name, action, passNum;
-	String[] prevDstn = new String[3];
-	String[] food = new String[10];
-	int actualAgriPdt, claimAgriPdt, actualWpn, claimWpn, actualMoney, claimMoney;
-	Date passIss;
-	char extraMoneyCheck;
+	private String name, action, passNum;
+	private String[] prevDstn = new String[3];
+	private int actualAgriPdt, claimAgriPdt, actualWpn, claimWpn, actualMoney, claimMoney, claimFood, actualFood;
+	private Date passIss;
+	private char extraMoneyCheck;
 
 	public Passenger() {
 		this.name = null;
@@ -14,10 +13,10 @@ public class Passenger {
 		this.claimWpn = 0;
 		this.claimMoney = 0;
 		this.prevDstn = null;
-		this.food = null;
+		this.claimFood = 0;
 	}
 
-	public Passenger(String name, String passNum, Date passIss, String[] food, String[] prevDstn, int claimMoney,
+	public Passenger(String name, String passNum, Date passIss, int claimFood, String[] prevDstn, int claimMoney,
 			int claimAgriPdt, int claimWpn) {
 		this.name = name;
 		this.passNum = passNum;
@@ -26,7 +25,7 @@ public class Passenger {
 		this.claimWpn = claimWpn;
 		this.claimMoney = claimMoney;
 		this.prevDstn = prevDstn;
-		this.food = food;
+		this.claimFood = claimFood;
 	}
 
 	public String getName() {
@@ -53,12 +52,20 @@ public class Passenger {
 		this.passIss = date;
 	}
 
-	public String[] getfood() {
-		return food;
+	public int getclaimFood() {
+		return claimFood;
 	}
 
-	public void setfood(String[] food) {
-		this.food = food;
+	public void setclaimFood(int food) {
+		this.claimFood = food;
+	}
+
+	public int getactualFood() {
+		return actualFood;
+	}
+
+	public void setactualFood(int food) {
+		this.actualFood = food;
 	}
 
 	public String[] getprevDstn() {
@@ -118,38 +125,59 @@ public class Passenger {
 	}
 
 	public void checkDiscrepancy() {
-		if (getclaimMoney() - getactualMoney() != 0) {
-			furtherCheck();
-		} else if (getclaimAgriPdt() - getactualAgriPdt() != 0) {
-			furtherCheck();
-		} else if (getclaimWpn() - getactualWpn() != 0) {
-			furtherCheck();
+		int count = 0;
+		if ((getclaimMoney() - getactualMoney()) >= 0) {
+			extraMoneyCheck = 'N';
+		} else if ((getclaimMoney() - getactualMoney()) < 0) {
+			extraMoneyCheck = 'Y';
+		}
+		if (getclaimFood() == 0 && getactualFood() == 0) {
+			count = 0;
+		}
+		if (getclaimFood() > 0 || (getclaimFood() == 0 && getactualFood() != 0)) {
+			count++;
+		}
+		if ((getclaimAgriPdt() - getactualAgriPdt()) < 0) {
+			count++;
+		}
+		if ((getclaimWpn() - getactualWpn()) < 0) {
+			count++;
+		}
+		if (count == 0) {
+			actionFurtherCheck(0);
 		} else {
-			action(0);
+			actionFurtherCheck(count);
 		}
 	}
 
-	public void furtherCheck() {
+	public void prevDstnCheck() {
 		int count = 0;
+		System.out.println(prevDstn);
 		for (int i = 0; i < prevDstn.length; i++) {
 			for (preIdentifiedCountries country : preIdentifiedCountries.values()) {
-				if (prevDstn[i] == country.getName()) {
+				if (prevDstn[i].equalsIgnoreCase(country.getName())) {
 					count++;
 				}
 			}
 		}
-		action(count);
+		System.out.println(count);
+		actionFurtherCheck(count);
 	}
 
-	public String action(int count) {
+	public String actionFurtherCheck(int count) {
 		if (count == 0) {
-			return String.format("No further action. Clean Record, eligible!!");
+			action = "No further action. Clean Record, eligible!!";
 		} else if (count == 1) {
-			return String.format("Full search of baggage.");
+			action = "Full search of baggage.";
 		} else if (count == 2) {
-			return String.format("Full search of baggage, x-ray scan and personal search.");
+			action = "Full search of baggage, x-ray scan and personal search.";
 		} else {
-			return String.format("Not eligible");
+			action = "Not eligible";
 		}
+		return action;
+	}
+
+	public String toString() {
+		return String.format(action);
 	}
 }
